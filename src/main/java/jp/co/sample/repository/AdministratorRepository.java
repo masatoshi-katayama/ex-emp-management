@@ -7,11 +7,14 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.sample.domain.Administrator;
-
+@Controller
 @Repository
+@RequestMapping("/AdministratorRepository")
 public class AdministratorRepository {
 
 	
@@ -24,7 +27,7 @@ public class AdministratorRepository {
 	
 	
 	
-	
+	@RequestMapping("/AdministratorRepository1")
 	public void insert(Administrator addministrator) {//管理者情報を挿入する
 		
 	final RowMapper<Administrator> EMPLOYEE_ROW_MAPPER = (rs,i) -> {
@@ -42,7 +45,7 @@ public class AdministratorRepository {
 	
 	}
 	
-	
+	@RequestMapping("/AdministratorRepository2")
 public Administrator findByMailAddressAndPassword(String mailAddress,String password) {
 	
 	
@@ -61,13 +64,13 @@ Administrator administrator1 = new Administrator();
 		
 	//SqlParameterSource param;
 	//String sql;
-	List<Administrator> administratorList = template.query(sql, param,ADMINISTRATOR_ROW_MAPPER);
+	List administratorList = template.queryForObject(sql, param,List.class);
 	
 	if(administratorList.size()==0) {
 		
 		return null;
 	}
-	return administratorList.get(i);
+	return administrator1 ;
 	
 };
 	return null;
