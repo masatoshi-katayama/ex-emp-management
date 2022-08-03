@@ -7,7 +7,7 @@ public class Administrator {
 	private String mailAddress;
 	private String password;
 	
-	Administrator(){
+	 public Administrator(){
 	//	処理は何も記述しなくてよい
 	//←左のスラッシュをjavadocコメントという
 	}

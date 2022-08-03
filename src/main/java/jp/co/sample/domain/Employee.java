@@ -17,7 +17,7 @@ public class Employee {
 	private String characteristics;
 	private Integer dependentsCount;
 	
-	Employee(){
+	public Employee(){
 		//引数のないコンストラクター
 	}
 
