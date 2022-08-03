@@ -6,14 +6,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.sample.form.InsertAdministratorForm;
-import jp.co.sample.service.AsministratirService;
+import jp.co.sample.service.AdministratorService;
+
 
 @Controller
-@RequestMapping("/AdministratorController")
+@RequestMapping("/")
 public class AdministratorController {
 
 	@Autowired
-private AsministratirService administratorService;	
+private AdministratorService administratorService;	
 	
 	@ModelAttribute
 	public InsertAdministratorForm setUpInsertAdministratorForm() {
